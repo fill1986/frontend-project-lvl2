@@ -1,0 +1,41 @@
+{
+  "name": "gendiff",
+  "version": "1.0.0",
+  "description": "It is utility for finding differences in configuration files",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production babel src --out-dir dist",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fill1986/frontend-project-lvl2.git"
+  },
+  "bin": {
+    "gendif": "dist/bin/gendiff.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Evgeniy F",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fill1986/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/fill1986/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-proposal-pipeline-operator": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.20.1"
+  }
+}

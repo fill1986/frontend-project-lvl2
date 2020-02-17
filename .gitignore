@@ -1,2 +1,4 @@
 node_modules
 dist
+/src/before.json
+/src/after.json

@@ -1,0 +1,5 @@
+
+start:
+	npx node src/bin/gendiff.js
+install:
+	npm publish --dry-run

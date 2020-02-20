@@ -2,7 +2,7 @@
   "name": "gendiff",
   "version": "1.0.0",
   "description": "It is utility for finding differences in configuration files",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist",
     "prepublishOnly": "npm run build"

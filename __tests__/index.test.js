@@ -1,26 +1,32 @@
 import gendiff from '../src/index.js';
 
-describe('Block test for gendiff', ()=>{
+import fs from 'fs';
+import path from 'path';
+
+const fileJson1 = `/__fixtures__/before.json`;
+const fileJson2 = `/__fixtures__/after.json`;
+
+describe('Block test for gendiff', () => {
     test('not have "- host"', () => {
-      expect(gendiff('/src/before.json', '/src/after.json')).not.toMatch('- host');
+      expect(gendiff(fileJson1, fileJson2)).not.toMatch('- host');
   });
   test('to have "+ timeout : 20"', () => {
-    expect(gendiff('/src/before.json', '/src/after.json')).toMatch('+ timeout : 20');
+    expect(gendiff(fileJson1, fileJson2)).toMatch('+ timeout : 20');
   });
   test('to have "+ timeout : 20"', () => {
-    expect(gendiff('/src/before.json', '/src/after.json')).toMatch('- timeout : 50');
+    expect(gendiff(fileJson1, fileJson2)).toMatch('- timeout : 50');
   });
   test('to have "host : hexlet.io"', () => {
-    expect(gendiff('/src/before.json', '/src/after.json')).toMatch('host : hexlet.io');
+    expect(gendiff(fileJson1, fileJson2)).toMatch('host : hexlet.io');
   });
   test('to have "+ verbose : true"', () => {
-    expect(gendiff('/src/before.json', '/src/after.json')).toMatch('+ verbose : true');
+    expect(gendiff(fileJson1, fileJson2)).toMatch('+ verbose : true');
   });
   test('to have "- proxy : 123.234.53.22"', () => {
-    expect(gendiff('/src/before.json', '/src/after.json')).toMatch('- proxy : 123.234.53.22');
+    expect(gendiff(fileJson1, fileJson2)).toMatch('- proxy : 123.234.53.22');
   });
   test('to have "- follow : false"', () => {
-    expect(gendiff('/src/before.json', '/src/after.json')).toMatch('- follow : false');
+    expect(gendiff(fileJson1, fileJson2)).toMatch('- follow : false');
   });
 })
 

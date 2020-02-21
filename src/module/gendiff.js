@@ -1,10 +1,9 @@
-let pathToConfig1 = '';
-let pathToConfig2 = '';
-
 import program from 'commander';
 import fs from 'fs';
 import _ from 'lodash';
-import path from 'path';
+
+let pathToConfig1 = '';
+let pathToConfig2 = '';
 
 
 program
@@ -31,34 +30,32 @@ const gendiff = (path1 = pathToConfig1, path2 = pathToConfig2) => {
   const keysJsonFile2 = Object.keys(jsonObj2);
 
 
- /* const newKeys = keysJsonFile2.reduce((acc, n) => {
+  /* const newKeys = keysJsonFile2.reduce((acc, n) => {
     if (!_.has(jsonObj1, n)) {
       acc += n;
     }
     return acc;
-  }, '');*/
+  }, ''); */
 
-  for (const item in jsonObj2){
-    if (!_.has(jsonObj1, item)){                   //добавление новых
-      result += `+ ${item} : ${jsonObj2[item]}\n`;
-    }
-    else if(_.has(jsonObj1, item) && jsonObj1[item] === jsonObj2[item]){ //добавление не измененых
-      result += `  ${item} : ${jsonObj2[item]}\n`;
-    }
-    else if(_.has(jsonObj1, item) && jsonObj1[item] != jsonObj2[item]){          //добавление измененых
-      result += `+ ${item} : ${jsonObj2[item]}\n`;
-      result += `- ${item} : ${jsonObj1[item]}\n`;
-    }
-  }
-  for(const item in jsonObj1){ // поиск удаленных
-    if(!_.has(jsonObj2, item)){
-      result += `- ${item} : ${jsonObj1[item]}\n`;
+  for (let i = 0; i < keysJsonFile2.length; i += 1) {
+    if (!_.has(jsonObj1, keysJsonFile2[i])) { // добавление новых
+      result += `+ ${keysJsonFile2[i]} : ${jsonObj2[keysJsonFile2[i]]}\n`;
+    } else if (_.has(jsonObj1, keysJsonFile2[i]) && jsonObj1[keysJsonFile2[i]] === jsonObj2[keysJsonFile2[i]]) { // доб не измененых
+      result += `  ${keysJsonFile2[i]} : ${jsonObj2[keysJsonFile2[i]]}\n`;
+    } else if (_.has(jsonObj1, keysJsonFile2[i]) && jsonObj1[keysJsonFile2[i]] !== jsonObj2[keysJsonFile2[i]]) { // добавление измененых
+      result += `+ ${keysJsonFile2[i]} : ${jsonObj2[keysJsonFile2[i]]}\n`;
+      result += `- ${keysJsonFile2[i]} : ${jsonObj1[keysJsonFile2[i]]}\n`;
     }
   }
 
-  result +='}';
+  for (let i = 0; i < keysJsonFile1.length; i += 1) { // поиск удаленных
+    if (!_.has(jsonObj2, keysJsonFile1[i])) {
+      result += `- ${keysJsonFile1[i]} : ${jsonObj1[keysJsonFile1[i]]}\n`;
+    }
+  }
+
+  result += '}';
   return result;
-
 };
 
 export default gendiff;

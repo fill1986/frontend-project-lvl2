@@ -1,14 +1,11 @@
-import gendiff from '../src/index.js';
+import gendiff from '../src/index';
 
-import fs from 'fs';
-import path from 'path';
-
-const fileJson1 = `/__fixtures__/before.json`;
-const fileJson2 = `/__fixtures__/after.json`;
+const fileJson1 = '/__fixtures__/before.json';
+const fileJson2 = '/__fixtures__/after.json';
 
 describe('Block test for gendiff', () => {
-    test('not have "- host"', () => {
-      expect(gendiff(fileJson1, fileJson2)).not.toMatch('- host');
+  test('not have "- host"', () => {
+    expect(gendiff(fileJson1, fileJson2)).not.toMatch('- host');
   });
   test('to have "+ timeout : 20"', () => {
     expect(gendiff(fileJson1, fileJson2)).toMatch('+ timeout : 20');
@@ -28,6 +25,4 @@ describe('Block test for gendiff', () => {
   test('to have "- follow : false"', () => {
     expect(gendiff(fileJson1, fileJson2)).toMatch('- follow : false');
   });
-})
-
-//expect(gendiff('/src/before.json', '/src/after.json')).toEqual('{ + timeout : 20 - timeout : 50 + verbose : true host : hexlet.io - proxy : 123.234.53.22 - follow : false }');
+});

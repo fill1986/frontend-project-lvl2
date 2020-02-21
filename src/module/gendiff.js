@@ -2,10 +2,10 @@ let pathToConfig1 = '';
 let pathToConfig2 = '';
 
 import program from 'commander';
-//const program = require('commander');
-const fs = require('fs');
-const _ = require('lodash');
-const path = require('path');
+import fs from 'fs';
+import _ from 'lodash';
+import path from 'path';
+
 
 program
   .version('7.0.0.')

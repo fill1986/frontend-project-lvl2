@@ -1,24 +1,8 @@
-import program from 'commander';
 import fs from 'fs';
 import _ from 'lodash';
 
-let pathToConfig1 = '';
-let pathToConfig2 = '';
-
-
-program
-  .version('7.0.0.')
-  .description('It is utility for finding differences in configuration files')
-  .option('-f, --format [type]', 'output format');
-
-program
-  .arguments('<firstConfig> <secondCOnfig>')
-  .action((firstConfig, secondCOnfig) => {
-    pathToConfig1 = firstConfig;
-    pathToConfig2 = secondCOnfig;
-  });
-
-program.parse(process.argv);
+const pathToConfig1 = '/__fixtures__/before.json';
+const pathToConfig2 = '/__fixtures__/after.json';
 
 const gendiff = (path1 = pathToConfig1, path2 = pathToConfig2) => {
   let result = '{\n';

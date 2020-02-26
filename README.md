@@ -6,4 +6,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/cf5cb15b15264ba51ee3/maintainability)](https://codeclimate.com/github/fill1986/frontend-project-lvl2/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/cf5cb15b15264ba51ee3/test_coverage)](https://codeclimate.com/github/fill1986/frontend-project-lvl2/test_coverage)
 ---
-[![asciicast](img src="https://asciinema.org/a/uiFiO3GXpHW6VBooYZFgOCqXC.svg")](https://asciinema.org/a/uiFiO3GXpHW6VBooYZFgOCqXC)
+
+<a href="https://asciinema.org/a/uiFiO3GXpHW6VBooYZFgOCqXC" target="_blank"><img src="https://asciinema.org/a/uiFiO3GXpHW6VBooYZFgOCqXC.svg" /></a>

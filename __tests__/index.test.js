@@ -1,7 +1,7 @@
-import gendiff from '../src/index';
+import { gendiff, parseFile } from '../src/index';
 
-const fileJson1 = '/__fixtures__/before.json';
-const fileJson2 = '/__fixtures__/after.json';
+const fileJson1 = parseFile('/__fixtures__/before.yaml');
+const fileJson2 = parseFile('/__fixtures__/after.yaml');
 
 describe('Block test for gendiff', () => {
   test('not have "- host"', () => {

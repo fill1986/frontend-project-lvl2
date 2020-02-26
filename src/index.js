@@ -1,4 +1,5 @@
 
 import gendiff from './module/gendiff';
+import parseFile from './module/parser';
 
-export default gendiff;
+export { gendiff, parseFile };

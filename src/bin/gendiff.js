@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
-import gendiff from '../index';
+import { gendiff, parseFile } from '../index';
 import program from '../module/commander';
 
-program.parse(process.argv); // !! импортнуть через точку вх
-console.log(program.firstConfig);
-console.log(gendiff());
+program.parse(process.argv);
+const fileBeforeChange = parseFile(program.action().args[0]);
+const fileAfterChange = parseFile(program.action().args[1]);
+
+console.log(gendiff(fileBeforeChange, fileAfterChange));

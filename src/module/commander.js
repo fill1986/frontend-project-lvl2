@@ -11,5 +11,4 @@ program
     console.log(`firsConfig: ${firstConfig}, secondConfig: ${secondCOnfig},`);
   });
 
-// program.parse(process.argv);
 export default program;

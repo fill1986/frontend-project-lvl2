@@ -2,4 +2,8 @@ node_modules
 dist
 /src/before.json
 /src/after.json
+/src/before.yaml
+/src/after.yaml
+/src/before.ini
+/src/after.ini
 coverage

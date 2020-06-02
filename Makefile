@@ -1,5 +1,5 @@
 start:
-	npx babel-node src/bin/gendiff.js  /__fixtures__/before.yaml /__fixtures__/after.yaml
+	npx babel-node src/bin/gendiff.js --format plain  /__fixtures__/before.ini /__fixtures__/after.ini
 install:
 	npm ci
 build:

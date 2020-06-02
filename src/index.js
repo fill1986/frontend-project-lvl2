@@ -1,6 +1,8 @@
 
-import gendiff from './module/gendiff';
 import parseFile from './module/parser';
-// import getFile from './module/buildPathAndReadFile';
+import createAST from './module/AST';
+import selectFormat from './formatters/index';
 
-export { gendiff, parseFile };
+export {
+  parseFile, createAST, selectFormat,
+};

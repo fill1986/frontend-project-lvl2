@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 
-import { gendiff, parseFile } from '../index';
+import {
+  parseFile, createAST, selectFormat,
+} from '../index';
 import program from '../module/commander';
 
-program.parse(process.argv);
+
 const fileBeforeChange = parseFile(program.action().args[0]);
 const fileAfterChange = parseFile(program.action().args[1]);
-
-console.log(gendiff(fileBeforeChange, fileAfterChange));
+const AST = createAST(fileBeforeChange, fileAfterChange);
+const formatersFunctions = selectFormat(program.action().format);
+console.log(formatersFunctions(AST));

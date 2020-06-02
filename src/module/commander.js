@@ -6,9 +6,7 @@ program
   .option('-f, --format [type]', 'output format');
 
 program
-  .arguments('<firstConfig> <secondCOnfig>')
-  .action((firstConfig, secondCOnfig) => {
-    console.log(`firsConfig: ${firstConfig}, secondConfig: ${secondCOnfig},`);
-  });
+  .arguments('<firstConfig> <secondCOnfig> [format]');
+program.parse(process.argv);
 
 export default program;
